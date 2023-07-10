@@ -1,0 +1,188 @@
+@use 'sass:map';
+@use 'functions' as f;
+
+//** clamp function 375px => 1000px
+
+$colors: (
+    // primary
+    "dark-grayish-blue": hsl(227, 10%, 46%),
+    "dark-cyan": hsl(185, 75%, 39%),
+    "very-dark-desaturated-blue": hsl(229, 23%, 23%),
+    // neutral
+    'white': white,
+    'dark-gray': hsl(0, 0%, 59%),
+    'light-gray': hsl(0, 0%, 83%),
+    'void': rgba(255,255,255,0)
+);
+
+$fonts: (
+    //font-size
+    'fs-title': f.rem(18),
+    'fs-descriptions': f.rem(14.5),
+    'fs-stats-item': f.rem(11.5),
+    //font-weight
+    "fw-400": 400,
+    "fw-700": 700,
+    // font-family
+    "ff-Kumbh_Sans": ('Kumbh Sans', sans-serif)
+);
+
+$letter-spacing: (
+    'ls-normal': normal,
+    'ls-stats-item': f.rem(0.8)
+);
+
+$line-heights: (
+    'lh-default': normal,
+);
+
+$breakpoints-up: (
+    'small': f.em(300),
+    'large': f.em(1000)
+);
+
+$flex: (
+    // direction
+    'fd-row': row,
+    'fd-column': column,
+    // justify-content
+    'fjc-start': start,
+    'fjc-center': center,
+    // align-items
+    'fai-start': start,
+    'fai-center': center,
+    // wrapping
+    'fw-nowrap': nowrap,
+    'fw-wrap': wrap,
+    // gaps (column & row)
+    'cg-normal': normal,
+    'rg-normal': normal
+);
+
+$grid: (
+    // columns
+    'grid-template-columns-stats-MOBILE': 1fr,
+    'grid-template-columns-stats-DESKTOP': repeat(3, 1fr),
+    'grid-template-columns-header': 1fr,
+    // rows
+    'grid-template-rows-auto': auto,
+    // gap
+    'grid-gap-0': 0,
+);
+
+$padding: (
+    // inline
+    "pi-0": 0,
+    'pi-stats': f.rem(28),
+    "pi-body": f.rem(24), 
+    // block
+    "pb-0": 0,
+    'pb-personal': f.rem(71) f.rem(22),
+    'pb-stats': f.rem(25) f.rem(24),
+    'pb-personal_Div': 0 f.rem(8), 
+);
+
+$margin: (
+    // inline
+    'mi-0': 0,
+    'mi-personal_Name': 0 f.rem(8),
+    'mi-auto': auto,
+    "mi-stats-item": (clamp(f.rem(-4), calc(-0.25rem + ((1vw - 0.234375rem) * 0.48)), f.rem(-1))) 0,
+    // block
+    'mb-0': 0,
+    'mb-stats-number': (clamp(0rem, calc(0.3125rem + ((1vw - 0.125rem) * -5)), f.rem(5))) 0px,
+    "mb-stats-item": f.rem(5) 0,
+    'mb-auto': auto,
+);
+
+$border: (
+    // border
+    'b-hero': f.rem(5) solid map.get($colors, 'white'),
+    'b-none': none,
+    'b-header': f.rem(1) solid map.get($colors, 'light-gray'),
+    // border-radius
+    'br-0': 0,
+    'br-profile': f.rem(14),
+    'br-100%': 100%
+);
+
+$outline: (
+    'outline-avatar': f.rem(5) solid white, 
+);
+
+$width: (
+    // width
+    'w-auto': auto, 
+    'w-bodyUpper': clamp(f.rem(480), calc(30rem + ((1vw - 0.234375rem) * 83.2)), f.rem(1000)),
+    'w-bodyDown': clamp(f.rem(580), calc(36.25rem + ((1vw - 0.234375rem) * 59.2)), f.rem(950)),
+    'w-avatar': f.rem(96),
+    'w-avatar_Overlay': f.rem(200),
+    'w-100%': 100%,
+    // max-width
+    'mw-none': none,
+    'mw-profile': f.rem(352),
+    'mw-100%': 100%
+);
+
+$height: (
+    'h-auto': auto,
+    'h-bodyUpper': clamp(f.rem(480), calc(30rem + ((1vw - 0.234375rem) * 83.2)), f.rem(1000)),
+    'h-bodyDown': clamp(f.rem(580), calc(36.25rem + ((1vw - 0.234375rem) * 59.2)), f.rem(950)),
+    'h-avatar': f.rem(96),
+    'h-avatar_Overlay': f.rem(68),
+    'h-half_Header': f.rem(142),
+    'h-100%': 100%,
+);
+
+$overflow: (
+    'o-hidden': hidden,
+);
+
+$position: (
+    // top
+    'top-0': 0,
+    'top-auto': auto,
+    'top-bodyUpper': clamp(f.rem(-529), calc(-16.5625rem + ((1vw - 0.234375rem) * -42.24)), f.rem(-265)),
+    'top-avatar': -35%,
+    'top-avatar_Overlay': f.rem(50),
+    // right
+    'right-0': 0,
+    'right-auto': auto,
+    'right-bodyDown': clamp(f.rem(-371), calc(-23.1875rem + ((1vw - 0.234375rem) * 25.44)), f.rem(-212)),
+    // bottom
+    'bottom-0': 0,
+    'bottom-auto': auto,
+    'bottom-bodyDown': clamp(f.rem(-602), calc(-17.3125rem + ((1vw - 0.234375rem) * -52)), f.rem(-277)),
+    // left
+    'left-0': 0,
+    'left-auto': auto,
+    'left-bodyUpper': clamp(f.rem(-306), calc(-16.8125rem + ((1vw - 0.234375rem) * -5.92)), f.rem(-269)),
+    'left-Half_Negative': -50%,
+);
+
+$box-shadow: (
+    'box-shadow-profile': 0 f.rem(20) f.rem(54) 0 rgba(0, 0, 0, 0.3),
+    'box-shadow-avatar': 0 0 f.rem(5) f.rem(5) rgba(0, 0, 0, 0.3),
+    'box-shadow-personal': 0 0 f.rem(5) f.rem(0.2) rgba(0, 0, 0, 0.3)
+);
+
+$background-image: (
+    // background-image 
+    'backgroundImage-background': url('../images/bg-pattern-card.svg'),
+    'backgroundImage-bodyUpper': url('../images/bg-pattern-top.svg'),
+    'backgroundImage-bodyDown': url('../images/bg-pattern-bottom.svg'),
+    'backgroundImage-avatar': url('../images/image-victor.jpg'),
+    // background-size 
+    'backgroundImage-cover': cover,
+    'backgroundImage-100%_100%': 100% 100%,
+    // background-repeat
+    'backgroundImage-repeat': repeat,
+    'backgroundImage-norepeat': no-repeat,    
+);
+
+$content: (
+    'content-empty': ''
+);
+
+
+

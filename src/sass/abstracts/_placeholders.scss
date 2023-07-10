@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use 'variables' as v;
+
+//----------------------- BORDER -----------------------//
+%borderBottom {
+    border-bottom: map.get(v.$border, 'b-header');
+}
+
+//----------------------- Z-INDEX -----------------------//
+%zIndexBehind {
+    z-index: -1;
+}
+
+//----------------------- ALIGN -----------------------//
+%text-center {
+    text-align: center;
+}
+
+//----------------------- POSITION -----------------------//
+%position-relative {
+    position: relative;
+}
+
+%position-absolute {
+    position: absolute;
+}

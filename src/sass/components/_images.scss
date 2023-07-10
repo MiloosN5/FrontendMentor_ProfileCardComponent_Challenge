@@ -1,0 +1,31 @@
+@use '../abstracts/' as a;
+
+.profile {
+    &__hero {
+        &__personal {
+            &__avatar {
+                @extend %position-absolute;
+                @include a.container('w-avatar', 'mw-100%', 'h-avatar', 'dark-cyan');
+                @include a.position('top-avatar', 'right-auto', 'bottom-auto', 'left-auto');
+                @include a.border('b-none', 'br-100%');
+                @include a.outline('outline-avatar');
+                @include a.bgImage('backgroundImage-avatar', 'backgroundImage-100%_100%', 'backgroundImage-norepeat');
+                @include a.boxShadow('box-shadow-avatar');
+                &::before {
+                    @extend %position-absolute;
+                    @include a.pseudo('content-empty');
+                    @include a.container('w-avatar_Overlay', 'mw-none', 'h-avatar_Overlay', 'white');
+                    @include a.position('top-avatar_Overlay', 'right-auto', 'bottom-auto', 'left-Half_Negative');
+                }
+                &::after {
+                    @extend %position-absolute;
+                    @include a.pseudo('content-empty');
+                    @include a.container('w-avatar', 'mw-100%', 'h-avatar', 'dark-cyan');
+                    @include a.border('b-none', 'br-100%');
+                    @include a.position('top-0', 'right-0', 'bottom-0', 'left-0');
+                    @include a.bgImage('backgroundImage-avatar', 'backgroundImage-100%_100%', 'backgroundImage-norepeat');
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,99 @@
+@use 'sass:map';
+@use 'variables' as v;
+
+
+//----------------------- BREAKPOINTS -----------------------//
+@mixin breakpoint($size) {
+    @media (min-width: map-get(v.$breakpoints-up, $size)) {
+        @content;
+    }
+}
+
+//----------------------- FLEXBOX -----------------------//
+@mixin flexbox($direction, $justify, $align, $wrap, $column-gap, $row-gap) {
+    display: flex;
+    flex-direction: map.get(v.$flex, $direction);
+    justify-content: map.get(v.$flex, $justify);
+    align-items: map.get(v.$flex, $align);
+    flex-wrap: map.get(v.$flex, $wrap);
+    column-gap: map.get(v.$flex, $column-gap);
+    row-gap: map.get(v.$flex, $row-gap);
+}
+
+//----------------------- GRID -----------------------//
+@mixin grid($template-columns, $template-rows, $gap) {
+    display: grid;
+    grid-template-columns: map.get(v.$grid, $template-columns);
+    grid-template-rows: map.get(v.$grid, $template-rows);
+    gap: map.get(v.$grid, $gap)
+}
+
+//----------------------- PADDING -----------------------//
+@mixin padding($padding-i, $padding-b) {
+    padding-inline: map.get(v.$padding, $padding-i);
+    padding-block: map.get(v.$padding, $padding-b);
+}
+
+//----------------------- MARGIN -----------------------//
+@mixin margin($margin-i, $margin-b) {
+    margin-inline: map.get(v.$margin, $margin-i);
+    margin-block: map.get(v.$margin, $margin-b);
+}
+
+//----------------------- BORDER -----------------------//
+@mixin border($border, $border-radius) {
+    border: map.get(v.$border, $border);
+    border-radius: map.get(v.$border, $border-radius);
+}
+
+//----------------------- OUTLINE -----------------------//
+@mixin outline($outline) {
+    outline: map.get(v.$outline, $outline);
+}
+
+//----------------------- FONT -----------------------//
+@mixin font($size, $weight, $lineHeight, $color, $letterSpacing) {
+    font-size: map.get(v.$fonts, $size);
+    font-weight: map.get(v.$fonts, $weight);
+    line-height: map.get(v.$line-heights, $lineHeight);
+    color: map.get(v.$colors, $color);
+    letter-spacing: map.get(v.$letter-spacing, $letterSpacing);
+}
+
+//----------------------- CONTAINER -----------------------//
+@mixin container($width, $max-width, $height, $color) {
+    width: map.get(v.$width, $width);
+    max-width: map.get(v.$width, $max-width);
+    height: map.get(v.$height, $height);
+    background-color: map.get(v.$colors, $color);
+}
+
+//----------------------- OVERFLOW -----------------------//
+@mixin overflow($overflow) {
+    overflow: map.get(v.$overflow, $overflow);
+}
+
+//----------------------- POSITION -----------------------//
+@mixin position($top, $right, $bottom, $left) {
+    top: map.get(v.$position, $top);
+    right: map.get(v.$position, $right);
+    bottom: map.get(v.$position, $bottom); 
+    left: map.get(v.$position, $left);
+}
+
+//----------------------- BOX-SHADOW -----------------------//
+@mixin boxShadow($boxShadow) {
+    box-shadow: map.get(v.$box-shadow, $boxShadow);
+}
+
+//----------------------- BACKGROUND-IMAGE -----------------------//
+@mixin bgImage($image, $size, $repeat) {
+    background-image: map.get(v.$background-image, $image);
+    background-size: map.get(v.$background-image, $size);
+    background-repeat: map.get(v.$background-image, $repeat);
+}
+
+//----------------------- PSEUDO-ELEMENT -----------------------//
+@mixin pseudo($content) {
+    content: map.get(v.$content, $content);
+}

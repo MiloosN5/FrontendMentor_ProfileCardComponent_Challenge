@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '../abstracts/' as a;
+
+.profile {
+    &__stats {
+        &__category {
+            h3 {
+                @include a.margin('mi-0', 'mb-stats-number');           
+            }
+            p {
+                @include a.margin('mi-stats-item', 'mb-stats-item');           
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@use 'sass:map';
+@use  '../abstracts' as a;
+
+// use a more-intuitive box-sizing model
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+// remove default margin & padding
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// allow percentage-based heights in the application
+html, body {
+    //height: 100%;
+    min-height: 100vh;
+}
+
+// improve text rendering
+body {
+  -webkit-font-smoothing: antialiased;
+}    
+
+// Improve media defaults
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+// Remove built-in form typography styles
+input, button, textarea, select {
+    font: inherit;
+}
+
+// Avoid text overflows
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+// Remove default underline on anchor with "href" attribute
+a {
+    text-decoration: none;
+}
+
+// add cursor to be pointer when hovering over 
+button, a {
+    cursor: pointer;
+}
+
+// avoid scrolling
+html, body {
+    overflow: hidden;
+}
+
+
+

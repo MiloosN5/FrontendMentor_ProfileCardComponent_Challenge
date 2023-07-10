@@ -1,0 +1,12 @@
+@use '../abstracts/' as a;
+
+.profile {
+    &__stats {
+        @include a.grid('grid-template-columns-stats-MOBILE', 'grid-template-rows-auto', 'grid-gap-0');
+        @include a.padding('pi-stats', 'pb-stats');
+        @include a.margin('mi-auto', 'mb-0');
+        @include a.breakpoint('small') {
+            @include a.grid('grid-template-columns-stats-DESKTOP', 'grid-template-rows-auto', 'grid-gap-0');
+        }
+    }
+}

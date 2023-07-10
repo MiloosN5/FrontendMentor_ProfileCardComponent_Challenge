@@ -1,0 +1,15 @@
+@use '../abstracts/' as a;
+
+.profile {
+    &__hero {
+        &__personal {
+            &__wrapper {
+                @include a.flexbox('fd-row', 'fjc-center', 'fai-center', 'fw-wrap', 'cg-normal', 'rg-normal');
+                @include a.padding('pi-0', 'pb-personal_Div');
+                h1 {
+                    @include a.margin('mi-personal_Name', 'mb-0');
+                }
+            }
+        }
+    }
+}

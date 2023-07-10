@@ -1,0 +1,10 @@
+@use '../abstracts/' as a;
+
+.profile {
+    @include a.container('w-100%', 'mw-profile', 'h-auto', 'white');
+    @include a.border('b-none', 'br-profile');
+    @include a.margin('mi-auto', 'mb-0');
+    @include a.overflow('o-hidden');    
+    @include a.boxShadow('box-shadow-profile');
+    @extend %text-center;
+}

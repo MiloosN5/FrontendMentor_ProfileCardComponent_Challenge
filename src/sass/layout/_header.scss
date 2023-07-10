@@ -1,0 +1,20 @@
+@use '../abstracts/' as a;
+
+.profile {
+    &__hero {
+        @include a.grid('grid-template-columns-header', 'grid-template-rows-auto', 'grid-gap-0');
+        @include a.overflow('o-hidden');
+        @extend %borderBottom;   
+        &__background {
+            @include a.container('w-auto', 'mw-none', 'h-half_Header', 'void'); 
+            @include a.bgImage('backgroundImage-background', 'backgroundImage-cover', 'backgroundImage-norepeat'); 
+        }   
+        &__personal {
+            @extend %position-relative;
+            min-height: 142px;
+            @include a.padding('pi-0', 'pb-personal');
+            @include a.flexbox('fd-column', 'fjc-start', 'fai-center', 'fw-wrap', 'cg-normal', 'rg-normal');
+            @include a.boxShadow('box-shadow-personal');
+        }
+    }
+}

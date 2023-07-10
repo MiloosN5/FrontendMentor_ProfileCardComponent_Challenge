@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use '../abstracts' as a;
+
+body {
+    @include a.container('w-100%', 'mw-none', 'h-auto', 'dark-cyan');
+    @include a.flexbox('fd-column', 'fjc-center', 'fai-center', 'fw-nowrap', 'cg-normal', 'rg-normal');
+    @include a.padding('pi-body', 'pb-0');
+    &::before {
+        @include a.pseudo('content-empty');
+        @include a.container('w-bodyUpper', 'mw-none', 'h-bodyUpper', 'void');  
+        @include a.border('b-none', 'br-100%');  
+        @include a.position('top-bodyUpper', 'right-auto', 'bottom-auto', 'left-bodyUpper');
+        @include a.bgImage('backgroundImage-bodyUpper', 'backgroundImage-cover', 'backgroundImage-norepeat');
+        @extend %position-absolute;
+        @extend %zIndexBehind;
+    }
+    &::after {
+        @include a.pseudo('content-empty');
+        @include a.container('w-bodyDown', 'mw-none', 'h-bodyDown', 'void');   
+        @include a.border('b-none', 'br-100%'); 
+        @include a.position('top-auto', 'right-bodyDown', 'bottom-bodyDown', 'left-auto');
+        @include a.bgImage('backgroundImage-bodyDown', 'backgroundImage-cover', 'backgroundImage-norepeat');
+        @extend %position-absolute;
+        @extend %zIndexBehind;
+    }
+}

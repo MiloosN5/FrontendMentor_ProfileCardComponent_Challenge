@@ -1,0 +1,7 @@
+@use 'sass:map';
+@use '../abstracts' as a;
+
+main {
+    width: map.get(a.$width, 'w-100%');
+}
+

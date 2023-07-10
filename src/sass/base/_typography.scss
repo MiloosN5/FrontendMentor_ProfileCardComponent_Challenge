@@ -1,0 +1,39 @@
+@use 'sass:map';
+@use '../abstracts/' as a;
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+//----------------------- Font-Family -----------------------//
+* {
+    font-family: map.get(a.$fonts, 'ff-Kumbh_Sans');
+}
+
+//----------------------- Other font settings -----------------------//
+.profile {
+    &__hero {
+        &__personal {
+            div {
+                h1 {
+                    @include a.font('fs-title', 'fw-700', 'lh-default', 'very-dark-desaturated-blue', 'ls-normal');         
+                }
+                p {
+                    @include a.font('fs-title', 'fw-400', 'lh-default', 'dark-grayish-blue', 'ls-normal');         
+                }
+            }
+            p {
+                @include a.font('fs-descriptions', 'fw-400', 'lh-default', 'dark-grayish-blue', 'ls-normal');         
+            }
+        }
+    }
+    &__stats {
+        div {
+            h3 {
+                @include a.font('fs-title', 'fw-700', 'lh-default', 'very-dark-desaturated-blue', 'ls-normal');         
+            }
+            p {
+                @include a.font('fs-stats-item', 'fw-400', 'lh-default', 'dark-grayish-blue', 'ls-stats-item');               
+            }
+        }
+    }
+}
+
