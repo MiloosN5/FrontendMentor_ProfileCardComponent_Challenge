@@ -4,7 +4,7 @@
 .profile {
     &__stats {
         &__category {
-            h3 {
+            h2 {
                 @include a.margin('mi-0', 'mb-stats-number');           
             }
             p {
