@@ -54,7 +54,7 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 * Understanding elements that are relative to something else. In this challenge, there are two circles that are related to the certain corner of the viewport & also avatar that is related to its ancestor ('profile__hero__personal'). 
     * **Decorative images (circles)**
         Since they depend on the corners of the viewport, they can be created as a pseudo elements (before & after) of 'body'.
-        These pseudo elements allow you to insert “content” before and after any non-replaced element (e.g. they work on a <div> but not an <input> ). This effectively allows you to show something on a web page that might not be present in the HTML content. (via [CSS Tricks](https://css-tricks.com/7-practical-uses-for-the-before-and-after-pseudo-elements-in-css/)).
+        These pseudo elements allow you to insert “content” before and after any non-replaced element (e.g. they work on a "&lt;div&gt;" but not an "&lt;input&gt;" ). This effectively allows you to show something on a web page that might not be present in the HTML content. (via [CSS Tricks](https://css-tricks.com/7-practical-uses-for-the-before-and-after-pseudo-elements-in-css/)).
         The sizes and positions are different on the various devices. To avoid sudden change of different versions, it's way better to make transition progressively. You can achieve it with clamp() function. Use of online-avaiable fluid clamp calculator can be really helpfull. <br/>
         **Notes**: Links for some avaiable calculator can be found in the [Useful resources](#useful-resources) section.
 
